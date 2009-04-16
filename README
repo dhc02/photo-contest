@@ -1,0 +1,1 @@
+This is a simple app that uses paperclip to upload photos and create thumbnails, then displays them without any kind of style at and allows people to vote on their favorites. As of right now there is a limit of one vote per entry per session.

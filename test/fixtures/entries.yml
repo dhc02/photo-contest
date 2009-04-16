@@ -1,0 +1,19 @@
+one:
+  title: MyString
+  photog: MyString
+  photog_link: MyString
+  desc: MyText
+  photo_file_name: MyString
+  photo_content_type: MyString
+  photo_file_size: 1
+  photo_uploaded_at: 2009-04-15 15:59:18
+
+two:
+  title: MyString
+  photog: MyString
+  photog_link: MyString
+  desc: MyText
+  photo_file_name: MyString
+  photo_content_type: MyString
+  photo_file_size: 1
+  photo_uploaded_at: 2009-04-15 15:59:18

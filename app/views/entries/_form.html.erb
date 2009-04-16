@@ -1,0 +1,27 @@
+<% form_for @entry, :html => { :multipart => true } do |f| %>
+
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :photog %><br />
+    <%= f.text_field :photog %>
+  </p>
+  <p>
+    <%= f.label :photog_link %><br />
+    <%= f.text_field :photog_link %>
+  </p>
+  <p>
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc %>
+  </p>
+  <p>
+    <%= f.file_field :photo %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+  
+<% end %>

@@ -1,0 +1,16 @@
+<h3><%= @entry.title %></h3>
+<%= image_tag @entry.photo.url(:large) %><br />
+Photographer: <%= link_to @entry.photog, @entry.photog_link %><br />
+Votes: <%= @entry.votes_for %><br />
+Description: 
+<p>
+  <%= @entry.desc %>
+</p>
+
+
+
+<div class="bottom_links">
+  <%= link_to "Edit", edit_entry_path(@entry) %> |
+  <%= link_to "Destroy", @entry, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", entries_path %>
+</div>

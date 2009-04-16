@@ -1,0 +1,17 @@
+.entry {
+  padding-right: 20px;
+  float: left;
+}
+
+.bottom_links {
+  position: fixed;
+  bottom: 0px;
+  background: white;
+  padding: 10px;
+  padding-left: 5px;
+}
+
+#flash_notice {
+  background-color: #FF0;
+  text-align; center;
+}
