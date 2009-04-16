@@ -1771,3 +1771,345 @@ Rendering entries/index
 Completed in 64ms (View: 31, DB: 5) | 200 OK [http://localhost/entries]
 ** vote_fu: setting up load paths
 ** vote_fu: initialized properly.
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:19:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;35;1mRobot Load (0.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 66ms (DB: 1) | 302 Found [http://localhost/entries/vote/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:19:07) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 84ms (View: 51, DB: 5) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:19:13) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 5) [0m
+  [4;35;1mRobot Load (0.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+  [4;36;1mVote Create (2.0ms)[0m   [0;1mINSERT INTO "votes" ("voteable_id", "voter_id", "vote", "voteable_type", "created_at", "updated_at", "voter_type") VALUES(5, 1, 't', 'Entry', '2009-04-16 16:19:13', '2009-04-16 16:19:13', 'Robot')[0m
+Redirected to http://localhost:3000/entries
+Completed in 78ms (DB: 3) | 302 Found [http://localhost/entries/vote/5]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:19:14) [GET]
+  [4;35;1mEntry Load (2.0ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 63ms (View: 30, DB: 4) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:19:18) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mEntry Load (1.0ms)[0m   [0mSELECT * FROM "entries" WHERE ("entries"."id" = 4) [0m
+  [4;36;1mRobot Load (0.0ms)[0m   [0;1mSELECT * FROM "robots" LIMIT 1[0m
+  [4;35;1mVote Create (2.0ms)[0m   [0mINSERT INTO "votes" ("voteable_id", "voter_id", "vote", "voteable_type", "created_at", "updated_at", "voter_type") VALUES(4, 1, 't', 'Entry', '2009-04-16 16:19:18', '2009-04-16 16:19:18', 'Robot')[0m
+Redirected to http://localhost:3000/entries
+Completed in 76ms (DB: 3) | 302 Found [http://localhost/entries/vote/4]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:19:19) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 64ms (View: 28, DB: 6) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:19:22) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEntry Load (0.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 3) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 202ms (DB: 1) | 302 Found [http://localhost/entries/vote/3]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:19:23) [GET]
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 32, DB: 3) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:27:59) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 78ms (View: 39, DB: 5) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:28:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 62ms (DB: 2) | 302 Found [http://localhost/entries/vote/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:28:06) [GET]
+  [4;36;1mEntry Load (3.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 65ms (View: 31, DB: 6) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:28:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;35;1mRobot Load (0.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 60ms (DB: 1) | 302 Found [http://localhost/entries/vote/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:28:16) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 33, DB: 4) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:28:48) [GET]
+  [4;36;1mEntry Load (3.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 32, DB: 5) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:28:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;35;1mRobot Load (0.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 193ms (DB: 1) | 302 Found [http://localhost/entries/vote/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:28:55) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 85ms (View: 47, DB: 5) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:29:30) [GET]
+  [4;36;1mEntry Load (3.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 68ms (View: 34, DB: 5) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:29:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 62ms (DB: 2) | 302 Found [http://localhost/entries/vote/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:29:37) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 66ms (View: 34, DB: 3) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:32:36) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 33, DB: 3) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:32:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 2) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 63ms (DB: 2) | 302 Found [http://localhost/entries/vote/2]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:32:43) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 66ms (View: 32, DB: 4) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:32:50) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEntry Load (0.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 3) [0m
+  [4;35;1mRobot Load (0.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 62ms (DB: 0) | 302 Found [http://localhost/entries/vote/3]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:32:51) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 69ms (View: 34, DB: 4) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:33:09) [GET]
+  [4;36;1mEntry Load (3.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 69ms (View: 33, DB: 6) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:33:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEntry Load (1.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 1) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 64ms (DB: 2) | 302 Found [http://localhost/entries/vote/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:33:16) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 34, DB: 3) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:33:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEntry Load (0.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 2) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 64ms (DB: 1) | 302 Found [http://localhost/entries/vote/2]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:33:24) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 32, DB: 4) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:37:08) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mEntry Load (0.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 4) [0m
+  [4;35;1mRobot Load (1.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 62ms (DB: 1) | 302 Found [http://localhost/entries/vote/4]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:37:09) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 67ms (View: 32, DB: 5) | 200 OK [http://localhost/entries]
+
+
+Processing EntriesController#vote (for 127.0.0.1 at 2009-04-16 10:37:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mEntry Load (0.0ms)[0m   [0;1mSELECT * FROM "entries" WHERE ("entries"."id" = 3) [0m
+  [4;35;1mRobot Load (0.0ms)[0m   [0mSELECT * FROM "robots" LIMIT 1[0m
+Redirected to http://localhost:3000/entries
+Completed in 61ms (DB: 0) | 302 Found [http://localhost/entries/vote/3]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-16 10:37:45) [GET]
+  [4;36;1mEntry Load (2.0ms)[0m   [0;1mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 68ms (View: 34, DB: 5) | 200 OK [http://localhost/entries]
