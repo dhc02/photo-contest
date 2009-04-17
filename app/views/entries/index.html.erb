@@ -5,7 +5,12 @@
     <span class="show_link"><%= link_to "Show", entry %></span>
     <span class="edit_link"><%= link_to "Edit", edit_entry_path(entry) %></span>
     <span class="vote">
+      <a href="/entries/vote/<%= entry.id %>">
+        <img id="thumbsup" src="/images/thumbsup.png" />
+      </a>
+      <!--
       <%= link_to "vote", {:controller => "entries", :action => "vote", :id => entry.id}, :class => 'vote' %>
+      -->
     </span>
   </div>
 <% end -%>

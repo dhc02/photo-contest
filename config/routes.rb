@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :entries
   
-  map.connect 'entries/vote', :controller => 'entries', :action => 'vote'
+  map.connect 'entries/vote/:id', :controller => 'entries', :action => 'vote'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

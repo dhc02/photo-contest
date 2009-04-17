@@ -1,11 +1,26 @@
-<head>
-  <%= stylesheet_link_tag "site" %>
-  <%= javascript_include_tag "jquery-1.3.2", "site" %>
-</head>
-<div id="flash">
-  <% flash.each do |key, value| -%>
-    <div id="flash_<%= key -%>"><%= html_escape(value) %></div>
-  <% end -%>
-</div>
-<%= yield %>
-<br /><br />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <%= stylesheet_link_tag "site" %><%= javascript_include_tag "jquery-1.3.2", "site" %>
+    <title></title>
+  </head>
+  
+  <body>
+    
+    <div id="flash">
+      <% flash.each do |key, value| -%>
+        <div id="flash_&lt;%= key -%&gt;">
+          <%= html_escape(value) %>
+        </div>
+      <% end -%>
+    </div>
+    
+    <%= yield %>
+    
+    <p>
+      <br>
+      <br>
+    </p>
+    
+  </body>
+</html>
