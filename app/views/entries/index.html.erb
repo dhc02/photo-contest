@@ -5,7 +5,7 @@
     <span class="show_link"><%= link_to "Show", entry %></span>
     <span class="edit_link"><%= link_to "Edit", edit_entry_path(entry) %></span>
     <span class="vote">
-      <%= link_to "vote", :controller => "entries", :action => "vote", :id => entry.id %>
+      <%= link_to "vote", {:controller => "entries", :action => "vote", :id => entry.id}, :class => 'vote' %>
     </span>
   </div>
 <% end -%>
