@@ -16,26 +16,20 @@
         </a>
       </span>
       (<%= entry.votes_for %> votes so far)
-    </div>
+    </div> <!-- #highslide-caption -->
 
     <br />
-    <!--
-    <span class="show_link">
-      <%= link_to "Show", entry %>
-    </span>
-    <span class="edit_link">
-      <%= link_to "Edit", edit_entry_path(entry) %>
-    </span>
-    -->
-    <span class="title">
-      <%= entry.title %> by <a class="photog" href="<%= entry.photog_link %>"><%= entry.photog %></a>
-    </span>
-    <span class="vote">
-      <a href="/entries/vote/<%= entry.id %>">
-        <img id="thumbsup" src="/images/thumbsup.png" />
-      </a>
-    </span>
-  </div>
+    <div class="caption" >
+      <span class="title">
+        <%= entry.title %> by <a class="photog" href="<%= entry.photog_link %>"><%= entry.photog %></a>
+      </span>
+      <span class="vote">
+        <a href="/entries/vote/<%= entry.id %>">
+          <img id="thumbsup" src="/images/thumbsup.png" />
+        </a>
+      </span>
+    </div> <!-- #caption -->
+  </div> <!-- #entry -->
 <% end -%>
 
 <div class="bottom_links">

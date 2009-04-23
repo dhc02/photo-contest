@@ -5,9 +5,14 @@ body {
 .entry {
   float: left;
   height: 150px;
-  margin-bottom: 20px;
-  max-width: 180px;
-  padding-right: 20px;
+  margin-bottom: 5px;
+  margin-right: 7px;
+  padding-bottom: 20px;
+  width: 180px;
+}
+
+.photo {
+  text-align: center;
 }
 
 .photo img {
@@ -19,6 +24,10 @@ body {
 .title {
   font-family: Georgia;
   font-size: 80%;
+}
+
+.caption {
+  width: 170px;
 }
 
 .vote {

@@ -3884,3 +3884,51 @@ Rendering entries/index
   [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
 Completed in 64ms (View: 32, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-23 16:59:53) [GET]
+  [4;35;1mEntry Load (2.0ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 63ms (View: 31, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-23 17:03:54) [GET]
+  [4;35;1mEntry Load (3.0ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 57ms (View: 25, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-23 17:07:48) [GET]
+  [4;35;1mEntry Load (1.0ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 57ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2009-04-23 17:13:10) [GET]
+  [4;35;1mEntry Load (2.0ms)[0m   [0mSELECT * FROM "entries" [0m
+Rendering template within layouts/application
+Rendering entries/index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 1 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 2 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 3 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 4 AND voteable_type = 'Entry' AND vote = 't') [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "votes" WHERE (voteable_id = 5 AND voteable_type = 'Entry' AND vote = 't') [0m
+Completed in 56ms (View: 25, DB: 3) | 200 OK [http://localhost/]
