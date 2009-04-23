@@ -23,7 +23,6 @@ $(document).ready(function() {
   
   hs.graphicsDir = '/images/highslide/';
   hs.outlineType = 'rounded-white';
-  hs.dimmingOpacity = 0.85;
   hs.showCredits = false;
   hs.fadeInOut = true;
   hs.transitions = ['expand', 'crossfade'];
