@@ -1,16 +1,39 @@
 <% for entry in @entries %>
   <div class="entry">
-    <h3><%=h entry.title %> (votes: <%= entry.votes_for %>)</h3>
-    <%= image_tag entry.photo.url(:thumb), :height => "113px" %><br />
-    <span class="show_link"><%= link_to "Show", entry %></span>
-    <span class="edit_link"><%= link_to "Edit", edit_entry_path(entry) %></span>
+    <a class="highslide photo" href="<%= entry.photo.url(:large) %>" >
+      <img class="thumb" src="<%= entry.photo.url(:thumb) %>" alt="<%= entry.title %>" />
+    </a>
+    
+    <div class="highslide-caption">
+      <strong><%= entry.title %></strong> by <a class="photog" href="<%= entry.photog_link %>"><%= entry.photog %></a>
+      <p>
+        <%= entry.desc %>
+      </p>
+      Vote for this photo: 
+      <span class="vote">
+        <a href="/entries/vote/<%= entry.id %>">
+          <img id="thumbsup" src="/images/thumbsup.png" />
+        </a>
+      </span>
+      (<%= entry.votes_for %> votes so far)
+    </div>
+
+    <br />
+    <!--
+    <span class="show_link">
+      <%= link_to "Show", entry %>
+    </span>
+    <span class="edit_link">
+      <%= link_to "Edit", edit_entry_path(entry) %>
+    </span>
+    -->
+    <span class="title">
+      <%= entry.title %> by <a class="photog" href="<%= entry.photog_link %>"><%= entry.photog %></a>
+    </span>
     <span class="vote">
       <a href="/entries/vote/<%= entry.id %>">
         <img id="thumbsup" src="/images/thumbsup.png" />
       </a>
-      <!--
-      <%= link_to "vote", {:controller => "entries", :action => "vote", :id => entry.id}, :class => 'vote' %>
-      -->
     </span>
   </div>
 <% end -%>
