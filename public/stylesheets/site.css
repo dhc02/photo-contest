@@ -2,6 +2,17 @@ body {
   background-color:#F7F4D7;
 }
 
+a {
+text-decoration: underline;
+color: #333;
+}
+
+a:hover {
+text-decoration: none;
+color: #333;
+}
+
+
 .entry {
   float: left;
   height: 150px;
