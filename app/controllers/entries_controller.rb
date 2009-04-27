@@ -44,7 +44,7 @@ class EntriesController < ApplicationController
   
   def vote
     @entry = Entry.find(params[:id])
-    @robot = Robot.first
+    @robot = Robot.new
     session[:votes] = session[:votes] || {}
     unless session[:votes][@entry.id]
       @robot.vote_for(@entry)
