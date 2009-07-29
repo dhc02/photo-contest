@@ -9,13 +9,7 @@
       <p>
         <%= entry.desc %>
       </p>
-      Vote for this photo: 
-      <span class="vote">
-        <a href="/entries/vote/<%= entry.id %>">
-          <img id="thumbsup" src="/images/thumbsup.png" />
-        </a>
-      </span>
-      (<%= entry.votes_for %> votes so far)
+      (<%= entry.votes_for %> votes total)
     </div> <!-- #highslide-caption -->
 
     <br />
@@ -24,10 +18,7 @@
         <%= entry.title %> by <a class="photog" href="<%= entry.photog_link %>"><%= entry.photog %></a>
       </span>
       <span class="vote">
-        <a href="/entries/vote/<%= entry.id %>">
-          <img id="thumbsup" src="/images/thumbsup.png" />
-        </a>
-        (<%= entry.votes_for %>)
+        (<%= entry.votes_for %> votes total)
       </span>
     </div> <!-- #caption -->
   </div> <!-- #entry -->

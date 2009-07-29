@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = Entry.tally({ :order => 'votes.count desc'})
   end
   
   def show
@@ -42,17 +42,17 @@ class EntriesController < ApplicationController
     redirect_to entries_url
   end
         
-  def vote
-    @entry = Entry.find(params[:id])
-    @robot = Robot.new
-    session[:votes] = session[:votes] || {}
-    unless session[:votes][@entry.id]
-      @robot.vote_for(@entry)
-      session[:votes][@entry.id] = 1
-      flash[:notice] = "Succesfully voted for #{@entry.title}." 
-    else
-      flash[:notice] = "You've already voted for #{@entry.title} once."
-    end
-    redirect_to entries_url
-  end
+  # def vote
+  #   @entry = Entry.find(params[:id])
+  #   @robot = Robot.new
+  #   session[:votes] = session[:votes] || {}
+  #   unless session[:votes][@entry.id]
+  #     @robot.vote_for(@entry)
+  #     session[:votes][@entry.id] = 1
+  #     flash[:notice] = "Succesfully voted for #{@entry.title}." 
+  #   else
+  #     flash[:notice] = "You've already voted for #{@entry.title} once."
+  #   end
+  #   redirect_to entries_url
+  # end
 end
